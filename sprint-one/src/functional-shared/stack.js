@@ -8,18 +8,18 @@ var Stack = function () {
 };
 
 var stackMethods = {
-  push: function(value) {
+  push: function (value) {
     this.storage[this.stackSize] = value;
     this.stackSize++;
   },
-  pop: function() {
+  pop: function () {
     this.stackSize--;
     if (this.stackSize < 0) {
       this.stackSize = 0;
     }
     return this.storage[this.stackSize];
   },
-  size: function() {
+  size: function () {
     return this.stackSize;
   }
 };
