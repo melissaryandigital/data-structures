@@ -26,3 +26,4 @@ Stack.prototype.size = function () {
 };
 
 
+var stack = new Stack();
