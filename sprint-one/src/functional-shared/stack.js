@@ -4,6 +4,7 @@ var Stack = function () {
   stack.stackSize = 0;
 
   _.extend(stack, stackMethods);
+
   return stack;
 };
 
