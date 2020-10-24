@@ -6,7 +6,6 @@ var Stack = function() {
   // but try not not reference your old code in writing the new style.
 };
 
-
 Stack.prototype.push = function(value) {
   this.storage[this.length] = value;
   this.length++;
@@ -23,6 +22,6 @@ Stack.prototype.size = function() {
   return this.length;
 };
 
-//var newStack = new Stack();
+var newStack = new Stack();
 
 
