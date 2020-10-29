@@ -40,6 +40,13 @@ Graph.prototype.removeNode = function (node) {
   }
   // Deleting the node last
   delete this.list[node];
+
+  // OR
+  // for (var i = 0; i < this.list[node]; i++) {
+  //   this.removeEdge(node, this.list[node][i]);
+  // }
+  // delete this.list[node];
+
 };
 
 // Returns a boolean indicating whether two specified nodes are connected.  Pass in the values contained in each of the two nodes.
