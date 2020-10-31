@@ -46,6 +46,7 @@ bstMethods.insert = function (value) {
   }
 };
 
+
 bstMethods.contains = function (value) {
 
   //if ( this === null) { return; }
