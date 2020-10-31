@@ -1,5 +1,4 @@
 
-
 var HashTable = function () {
   this._limit = 8;
   this._storage = LimitedArray(this._limit); // - > function
@@ -21,7 +20,8 @@ HashTable.prototype.insert = function (k, v) {
       this._storage.set(index, bucket);
       // if keys are different
     } else {
-      //  this._storage.set(index, [somethingAtIndex, bucket]);
+
+      // this._storage.set(index, [somethingAtIndex, bucket]);
       // if index[0] === array   -> [ [key,value], [key,value] ]
       // array[0] !== array  [key,value]  ->  'string'
       if (Array.isArray(this._storage.get(index)[0])) {
@@ -88,6 +88,10 @@ HashTable.prototype.remove = function (k) {
 
 /*
  * Complexity: What is the time complexity of the above functions?
+.insert = constant
+.retrieve = constant
+.remove = constant
+
  */
 
 

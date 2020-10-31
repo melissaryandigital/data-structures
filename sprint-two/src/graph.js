@@ -12,11 +12,7 @@ Graph.prototype.addNode = function (node) {
 
 // Return a boolean value indicating if the value passed to contains is represented in the graph.
 Graph.prototype.contains = function (node) {
-
-  for (var key in this.list) {
-    var copy = node.toString();
-    if (key === copy) { return true; }
-  }
+  if (this.list[node]) { return true; }
   return false;
 
 };
@@ -25,27 +21,10 @@ Graph.prototype.contains = function (node) {
 Graph.prototype.removeNode = function (node) {
 
   if (!this.list[node]) { return; }
-
-  // Removing edges first
-  // Iterate though all keys in the list
-  for (var keys in this.list) {
-    // Iterate through all the values in the array (or basically the connected nodes)
-    for (var i = 0; i < this.list[keys].length; i++) {
-      // If the value at this index is equal to the node
-      if (this.list[keys][i] === node) {
-        // remove it
-        this.list[keys].splice(i, 1);
-      }
-    }
+  for (var i = 0; i < this.list[node]; i++) {
+    this.removeEdge(node, this.list[node][i]);
   }
-  // Deleting the node last
   delete this.list[node];
-
-  // OR
-  // for (var i = 0; i < this.list[node]; i++) {
-  //   this.removeEdge(node, this.list[node][i]);
-  // }
-  // delete this.list[node];
 
 };
 
@@ -90,3 +69,18 @@ Graph.prototype.forEachNode = function (cb) {
     cb(key);
   }
 };
+
+
+/* Time Complexity
+
+.addNode = constant
+.contains = constant
+.removeNode = constant
+.hasEdge = linear
+.addEdge = constant
+.removeEdge = linear
+.forEachNode = linear
+
+
+
+*/

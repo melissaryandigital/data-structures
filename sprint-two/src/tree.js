@@ -17,6 +17,8 @@ treeMethods.addChild = function (value) {
 };
 
 treeMethods.contains = function (target) {
+// ()
+  // o (n())
 
   for (var i = 0; i < this.children.length; i++) {
 
@@ -35,4 +37,6 @@ treeMethods.contains = function (target) {
 
 /*
  * Complexity: What is the time complexity of the above functions?
+ .addChild = constant (because adding it to last index, no searching)
+ .contains = exponential
  */

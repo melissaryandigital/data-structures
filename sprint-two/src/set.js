@@ -24,4 +24,9 @@ setPrototype.remove = function(item) {
 
 /*
  * Complexity: What is the time complexity of the above functions?
+.add = linear
+.contains = linear
+.remove = linear
+
+Could have been constant if we used objects- MELISSA'S FAULT
  */
