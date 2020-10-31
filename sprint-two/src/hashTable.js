@@ -84,6 +84,14 @@ HashTable.prototype.remove = function (k) {
   this._storage.set(index, undefined);
 };
 
+HashTable.prototype.forEach = function (func) {
+  console.log('entering');
+  this._storage.each( function (value, idx, container) {
+    func(value);
+  });
+
+};
+
 
 
 /*

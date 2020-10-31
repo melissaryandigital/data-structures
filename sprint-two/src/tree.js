@@ -19,7 +19,6 @@ treeMethods.addChild = function (value) {
 treeMethods.contains = function (target) {
 // ()
   // o (n())
-
   for (var i = 0; i < this.children.length; i++) {
 
     if (this.children[i].value === target) {
@@ -33,7 +32,13 @@ treeMethods.contains = function (target) {
   return false;
 };
 
-
+treeMethods.forEach = function (cb) {
+  // iterate through the entire tree
+  for ( var i = 0; i < this.children.length; i++) {
+    cb(this.children[i].value);
+    this.children[i].forEach(cb);
+  }
+};
 
 /*
  * Complexity: What is the time complexity of the above functions?

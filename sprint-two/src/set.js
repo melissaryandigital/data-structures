@@ -28,5 +28,5 @@ setPrototype.remove = function(item) {
 .contains = linear
 .remove = linear
 
-Could have been constant if we used objects- MELISSA'S FAULT
+Could have been constant if we used obj- MELISSA'S FAULT
  */

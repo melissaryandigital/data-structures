@@ -24,4 +24,18 @@ describe('set', function() {
     expect(set.contains('Mel Gibson')).to.equal(false);
   });
 
+  it('NEW TEST: should contain only unique values', function() {
+    var set = Set();
+
+    set.add('Mel Gibson');
+    set.add('Sean Connery');
+    set.add('Sean Connery');
+
+    var secondSetIsNotUnique = _.uniq(set._storage).length;
+
+    expect(secondSetIsNotUnique).to.equal(2);
+
+  });
+
+
 });

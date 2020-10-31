@@ -18,6 +18,8 @@ describe('hashTable', function() {
     expect(hashTable.retrieve('Steven')).to.equal('Seagal');
   });
 
+
+
   it('should not contain values that were not inserted', function() {
     hashTable.insert('Steven', 'Spielberg');
     expect(hashTable.retrieve('Steven')).not.to.equal('Seagal');
@@ -45,6 +47,35 @@ describe('hashTable', function() {
     expect(hashTable.retrieve(v1)).to.equal(v1);
     expect(hashTable.retrieve(v2)).to.equal(v2);
     window.getIndexBelowMaxForKey = oldHashFunction;
+  });
+
+  it('NEW TEST - Keys should be a string and not a number ', function() {
+
+    var str = 'steven';
+    var num = 1;
+    hashTable.insert(str, 'Seagal');
+    expect(hashTable.retrieve(str)).to.equal('Seagal');
+    expect(hashTable.retrieve(num)).to.equal(undefined);
+
+  });
+
+  it('NEW TEST: should perform a call back function on all values', function() {
+    var array = [];
+    var cb = function(value) {
+      if (value !== undefined) {
+        for ( var tuple of value) {
+          var val = tuple[1] * 2;
+          array.push(val);
+        }
+      }
+    };
+
+    hashTable.insert('firstKey', 1);
+    hashTable.insert('secondKey', 2);
+    hashTable.forEach(cb);
+    console.log(array);
+    expect(array).to.eql([2, 4]);
+
   });
 
   // (Advanced! Remove the extra "x" when you want the following tests to run)
