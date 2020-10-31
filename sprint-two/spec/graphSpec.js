@@ -68,4 +68,12 @@ describe('graph', function() {
     expect(graph.hasEdge(3, 5)).to.equal(true);
     expect(graph.hasEdge(5, 5)).to.equal(true);
   });
+
+  it('NEW TEST: should not store values as nodes that were not inserted', function() {
+    graph.addNode(1);
+    graph.addNode(2);
+    graph.addNode(3);
+    expect(graph.contains(4)).to.equal(false);
+  });
+
 });
